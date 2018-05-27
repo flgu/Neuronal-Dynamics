@@ -319,5 +319,258 @@ Leaving u as a constant and abbreviate functional dependencies, writing
 
 \end_layout
 
+\begin_layout Standard
+Solution of the homogenous part:
+\end_layout
+
+\begin_layout Standard
+Ansatz
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+F\left(x\right) & =\frac{A\sinh(k\cdot x)}{x}\\
+\partial_{x}F\left(x\right) & =A\left(\frac{k\cosh\left(k\cdot x\right)}{x}-\frac{\sinh\left(k\cdot x\right)}{x^{2}}\right)\\
+\partial_{xx}F\left(x\right) & =A\left(\frac{k^{2}\sinh\left(k\cdot x\right)}{x}-\frac{k\cosh\left(k\cdot x\right)}{x^{2}}-\frac{k\cosh\left(k\cdot x\right)}{x^{2}}+\frac{2\sinh\left(k\cdot x\right)}{x^{3}}\right)\\
+\partial_{xx}F\left(x\right) & =A\left(\frac{k^{2}\sinh\left(k\cdot x\right)}{x}-\frac{2k\cosh\left(k\cdot x\right)}{x^{2}}+\frac{2\sinh\left(k\cdot x\right)}{x^{3}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calculate parts of the ODE
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+-\frac{u}{D}F & =-\frac{u}{D}\frac{A\sinh(k\cdot x)}{x}\\
+\frac{2}{x}\partial_{x}F & =A\left(\frac{2k\cosh\left(k\cdot x\right)}{x^{2}}-\frac{2\sinh\left(k\cdot x\right)}{x^{3}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Putting things together
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+A\left(\frac{k^{2}\sinh\left(k\cdot x\right)}{x}-\frac{2k\cosh\left(k\cdot x\right)}{x^{2}}+\frac{2\sinh\left(k\cdot x\right)}{x^{3}}+\frac{2k\cosh\left(k\cdot x\right)}{x^{2}}-\frac{2\sinh\left(k\cdot x\right)}{x^{3}}-\frac{u}{D}\frac{\sinh(k\cdot x)}{x}\right) & =0\\
+A\left(k^{2}-\frac{u}{D}\right)\frac{\sinh\left(k\cdot x\right)}{x} & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $k=\sqrt{\frac{u}{D}}$
+\end_inset
+
+(sign?)
+\end_layout
+
+\begin_layout Standard
+Particular solution to the inhomogenous equation
+\begin_inset Formula 
+\begin{align*}
+\partial_{x}^{2}F+\frac{2}{x}\partial_{x}F-\frac{u}{D}F & =-b_{0}\Theta\left(x-R_{0}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ansatz is also a constant polynomial with vanishing derivatives.
+\begin_inset Formula 
+\begin{align*}
+F_{p} & =C\\
+\partial_{x}^{2}C+\frac{2}{x}\partial_{x}C-\frac{u}{D}C & =-b_{0}\Theta\left(x-R_{0}\right)\\
+-\frac{u}{D}C & =-b_{0}\Theta\left(x-R_{0}\right)\\
+C & =\frac{Db_{0}}{u}\Theta\left(x-R_{0}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solution
+\begin_inset Formula 
+\begin{align*}
+F\left(x,u\right) & =A\frac{\sinh\left(\sqrt{\frac{u}{D}}\cdot x\right)}{x}+\frac{Db_{0}}{u}\Theta\left(x-R_{0}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Boundary condition 
+\begin_inset Formula $F\left(R_{0},u\right)=0$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+F\left(R_{0},u\right)=A\frac{\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)}{R_{0}}+\frac{Db_{0}}{u} & =0\\
+A\frac{\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)}{R_{0}} & =-\frac{Db_{0}}{u}\\
+A & =-\frac{Db_{0}R_{0}}{u\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Complete solution:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+F\left(r,u\right) & =-\frac{Db_{0}R_{0}\sinh\left(\sqrt{\frac{u}{D}}\cdot r\right)}{ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)}+\frac{Db_{0}}{u}\Theta\left(r-R_{0}\right)\\
+F\left(r,u\right) & =\frac{-Db_{0}R_{0}\sinh\left(\sqrt{\frac{u}{D}}\cdot r\right)+ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)Db_{0}\Theta\left(r-R_{0}\right)}{ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)}\\
+F\left(r,u\right) & =Db_{o}\frac{-R_{0}\sinh\left(\sqrt{\frac{u}{D}}\cdot r\right)+ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)\Theta\left(r-R_{0}\right)}{ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Definition of laplace backtransformation is a line integral in the complex
+ plane
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f\left(r,t\right) & =\frac{1}{2\pi i}\lim_{T\to\infty}\int_{u=\gamma-iT}^{u=\gamma+iT}e^{ut}F\left(r,u\right)du
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parameter 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ is real such that the function 
+\begin_inset Formula $f\left(t\right)=0$
+\end_inset
+
+ for 
+\begin_inset Formula $t<0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theory gives us
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{2\pi i}\lim_{T\to\infty}\int_{u=\gamma-iT}^{u=\gamma+iT}e^{ut}F\left(r,u\right)du & =\sum_{\text{all poles of F\left(r,u\right)}}Res\left[F\left(r,u\right)e^{ut}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Find poles of
+\begin_inset Formula 
+\begin{align*}
+ru^{2}\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right) & \rightarrow u=0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+multiplicity = 1
+\end_layout
+
+\begin_layout Standard
+Calculation of residue
+\begin_inset Formula 
+\begin{align*}
+Res_{0}Res\left[F\left(r,u\right)e^{ut}\right] & =\lim_{u\to0}\left(u-0\right)F\left(r,u\right)e^{ut}=\lim_{u\to0}\frac{f}{g}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f & =-Db_{o}R_{0}\sinh\left(\sqrt{\frac{u}{D}}\cdot r\right)e^{ut}+Db_{o}ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)\Theta\left(r-R_{0}\right)e^{ut}\\
+ & =-Db_{o}R_{0}\sinh\left(\sqrt{\frac{u}{D}}\cdot r+ut\right)+Db_{o}ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}+ut\right)\Theta\left(r-R_{0}\right)\\
+g & =r\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+calculate derivatives 
+\begin_inset Formula 
+\begin{align*}
+f^{\prime} & =d_{u}\left[-Db_{o}R_{0}\sinh\left(\sqrt{\frac{u}{D}}\cdot r+ut\right)+Db_{o}ru\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}+ut\right)\Theta\left(r-R_{0}\right)\right]\\
+ & =Db_{0}R_{0}\left(-\cosh\left(\sqrt{\frac{u}{D}}\cdot r+ut\right)\left(\frac{r}{2\sqrt{Du}}+t\right)+r\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}+ut\right)+ur\cosh\left(\sqrt{\frac{u}{D}}\cdot R_{0}+ut\right)\left(\frac{R_{0}}{2\sqrt{Du}}+t\right)\Theta\left(r-R_{0}\right)\right)\\
+g^{\prime} & =r\cosh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)\left(\frac{R_{0}}{2\sqrt{uD}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+LHopital lim
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\frac{f^{\prime}}{g^{\prime}} & =Db_{0}\frac{-\cosh\left(\sqrt{\frac{u}{D}}\cdot r+ut\right)\left(\frac{r}{2\sqrt{Du}}+t\right)+r\sinh\left(\sqrt{\frac{u}{D}}\cdot R_{0}+ut\right)+ur\cosh\left(\sqrt{\frac{u}{D}}\cdot R_{0}+ut\right)\left(\frac{R_{0}}{2\sqrt{Du}}+t\right)\Theta\left(r-R_{0}\right)}{r\cosh\left(\sqrt{\frac{u}{D}}\cdot R_{0}\right)\left(\frac{R_{0}}{2\sqrt{uD}}\right)}\\
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

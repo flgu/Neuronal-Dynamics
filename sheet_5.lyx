@@ -1,0 +1,504 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Langevin equation
+\begin_inset Formula 
+\begin{align*}
+m\ddot{x}+\gamma\dot{x}+kx & =F\left(t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Correlationfunction in time domain?
+\end_layout
+
+\begin_layout Standard
+Definition?
+\end_layout
+
+\begin_layout Standard
+Spectral density in equilibrium
+\begin_inset Formula 
+\begin{align*}
+\tilde{S}_{F}\left(\omega\right) & =4\pi k_{B}T\gamma
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wiener Khinchin theorem gives the realtion between spectral density and
+ fourier transform of the autocorrelation function
+\begin_inset Formula 
+\begin{align*}
+S\left(\omega\right) & =2\pi\tilde{C}\left(\omega\right)\\
+S\left(\omega\right) & =2\pi\tilde{C}\left(\omega\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From lecture
+\begin_inset Formula 
+\begin{align*}
+C_{FF}\left(\omega\right) & =2k_{B}T\gamma
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fourier transform
+\begin_inset Formula 
+\begin{align*}
+\tilde{C}\left(\omega\right) & =\int_{-\infty}^{\infty}C\left(t\right)e^{i\omega t}dt
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Fourier Back transform
+\begin_inset Formula 
+\begin{align*}
+C\left(t\right) & =\frac{1}{2\pi}\int_{-\infty}^{\infty}\tilde{C}\left(\omega\right)e^{-i\omega t}d\omega
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+insert our 
+\begin_inset Formula $C_{FF}\left(\omega\right)$
+\end_inset
+
+ and solve for delta function
+\begin_inset Formula 
+\begin{align*}
+C_{FF}\left(t\right) & =\frac{1}{2\pi}\int_{-\infty}^{\infty}\tilde{C}_{FF}\left(\omega\right)e^{-i\omega t}d\omega\\
+C_{FF}\left(t\right) & =\frac{1}{2\pi}\int_{-\infty}^{\infty}2k_{B}T\gamma e^{-i\omega t}d\omega\\
+C_{FF}\left(t\right) & =2k_{B}T\gamma\int_{-\infty}^{\infty}e^{-i2\pi ft}df\\
+C_{FF}\left(t\right) & =2k_{B}T\gamma\delta\left(t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+formale Lösung der ODE
+\end_layout
+
+\begin_layout Standard
+ODE
+\begin_inset Formula 
+\begin{align*}
+\gamma\dot{x} & =-kx+F\left(t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k>0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Homogene Lösung
+\begin_inset Formula 
+\begin{align*}
+\gamma\dot{x}+kx & =0\\
+\frac{\gamma}{k}\dot{x}+x & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+exponentieller Ansatz 
+\begin_inset Formula 
+\begin{align*}
+x\left(t\right) & =A_{0}\exp\left(-\frac{k}{\gamma}t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inhomogene Lösung partikuläre lösung mit variation of coefficients ansatz
+ 
+\begin_inset Formula $A=A\left(t\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+x\left(t\right) & =A\left(t\right)\exp\left(-\frac{k}{\gamma}t\right)\\
+\dot{x}\left(t\right) & =\dot{A}\left(t\right)\exp\left(-\frac{k}{\gamma}t\right)-\frac{k}{\gamma}A\left(t\right)\exp\left(-\frac{k}{\gamma}t\right)
+\end{align*}
+
+\end_inset
+
+plug into ode.
+\begin_inset Formula 
+\begin{align*}
+\gamma\dot{x} & =-kx+F\left(t\right)\\
+\gamma\dot{A}\left(t\right)\exp\left(-\frac{k}{\gamma}t\right)-kA\left(t\right)\exp\left(-\frac{k}{\gamma}t\right) & =-kA\left(t\right)\exp\left(-\frac{k}{\gamma}t\right)+F\left(t\right)\\
+\gamma\dot{A}\left(t\right)\exp\left(-\frac{k}{\gamma}t\right) & =F\left(t\right)\\
+\dot{A}\left(t\right) & =\frac{F\left(t\right)}{\gamma}\exp\left(\frac{k}{\gamma}t\right)\\
+\frac{dA}{dt} & =\frac{F\left(t\right)}{\gamma}\exp\left(\frac{k}{\gamma}t\right)\\
+A & =\frac{1}{\gamma}\int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This gives the overall solution as the sum of particular an general solution.
+\begin_inset Formula 
+\begin{align*}
+x\left(t\right) & =\exp\left(-\frac{k}{\gamma}t\right)\frac{1}{\gamma}\int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt+A_{0}\exp\left(-\frac{k}{\gamma}t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+initial condition 
+\begin_inset Formula 
+\begin{align*}
+x\left(t=0\right) & =x_{0}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+apply
+\begin_inset Formula 
+\begin{align*}
+x\left(0\right) & =\exp\left(-\frac{k}{\gamma}0\right)\frac{1}{\gamma}\int F\left(0\right)\exp\left(\frac{k}{\gamma}0\right)dt+A_{0}\exp\left(-\frac{k}{\gamma}0\right)\\
+x_{0} & =\frac{1}{\gamma}F\left(0\right)\int dt+A_{0}\\
+x_{0}-\frac{1}{\gamma}F\left(0\right) & =A_{0}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence
+\begin_inset Formula 
+\begin{align*}
+x\left(t\right) & =\exp\left(-\frac{k}{\gamma}t\right)\frac{1}{\gamma}\int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\exp\left(-\frac{k}{\gamma}t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mittlere Verschiebung
+\end_layout
+
+\begin_layout Standard
+gesucht ist das Verhalten der mittleren Verschiebung 
+\begin_inset Formula $\left\langle x\left(t\right)\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Problem: mittelwert über welche konkrete pdf? Mittelung über alle Realisierungen
+ des prozesses, also nur über zufallskraft.
+\end_layout
+
+\begin_layout Standard
+Versuch: Mittelwert über Lösung bilden
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle x\left(t\right)\right\rangle  & =\left\langle \exp\left(-\frac{k}{\gamma}t\right)\frac{1}{\gamma}\int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\exp\left(-\frac{k}{\gamma}t\right)\right\rangle \\
+\left\langle x\left(t\right)\right\rangle  & =\frac{1}{\gamma}\left\langle \exp\left(-\frac{k}{\gamma}t\right)\int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt\right\rangle +\left\langle \left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\exp\left(-\frac{k}{\gamma}t\right)\right\rangle \\
+\left\langle x\left(t\right)\right\rangle  & =\frac{1}{\gamma}\left\langle \exp\left(-\frac{k}{\gamma}t\right)\int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt\right\rangle +\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\left\langle \exp\left(-\frac{k}{\gamma}t\right)\right\rangle 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Linearität ausgenutzt und das Mittelwert nur über zufallskraft gebildet
+ wird
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle x\left(t\right)\right\rangle  & =\frac{1}{\gamma}\left\langle \exp\left(-\frac{k}{\gamma}t\right)\int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt\right\rangle +\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\left\langle \exp\left(-\frac{k}{\gamma}t\right)\right\rangle \\
+\left\langle x\left(t\right)\right\rangle  & =\exp\left(-\frac{k}{\gamma}t\right)\frac{1}{\gamma}\left\langle \int F\left(t\right)\exp\left(\frac{k}{\gamma}t\right)dt\right\rangle +\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\exp\left(-\frac{k}{\gamma}t\right)\left\langle 1\right\rangle 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Man kann integrale vertauschen und mittelwert in integral ziehen, außerdem
+ mittelung über 1 ist 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle x\left(t\right)\right\rangle  & =\exp\left(-\frac{k}{\gamma}t\right)\frac{1}{\gamma}\int\left\langle F\left(t\right)\right\rangle \exp\left(\frac{k}{\gamma}t\right)dt+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\exp\left(-\frac{k}{\gamma}t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Benutze dass Zufallskraft zero mean hat
+\begin_inset Formula 
+\begin{align*}
+\left\langle x\left(t\right)\right\rangle  & =\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)\exp\left(-\frac{k}{\gamma}t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dispersion
+\end_layout
+
+\begin_layout Standard
+gesucht:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\sigma^{2} & =\left\langle \left(x\left(t\right)-\left\langle x\left(t\right)\right\rangle \right)^{2}\right\rangle 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+forme um
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle \left(x\left(t\right)-\left\langle x\left(t\right)\right\rangle \right)^{2}\right\rangle  & =\left\langle \left(x\left(t\right)\right)^{2}\right\rangle -\left\langle x\left(t\right)\right\rangle ^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Berechne ersten Teil:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(x\left(t\right)\right)^{2} & =\left(e^{-\frac{k}{\gamma}t}\frac{1}{\gamma}\int F\left(t\right)e^{\frac{k}{\gamma}t}dt+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)e^{-\frac{k}{\gamma}t}\right)^{2}\\
+ & =\left(e^{-\frac{k}{\gamma}t}\frac{1}{\gamma}\int F\left(t\right)e^{\frac{k}{\gamma}t}dt\right)^{2}+2e^{-\frac{k}{\gamma}t}\frac{1}{\gamma}\int F\left(t\right)e^{\frac{k}{\gamma}t}dt\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)e^{-\frac{k}{\gamma}t}+\left(\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)e^{-\frac{k}{\gamma}t}\right)^{2}\\
+ & =e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\left(\int F\left(t\right)e^{\frac{k}{\gamma}t}dt\right)^{2}+2\left(\frac{x_{0}}{\gamma}-\frac{1}{\gamma^{2}}F\left(0\right)\right)e^{-2\frac{k}{\gamma}t}\int F\left(t\right)e^{\frac{k}{\gamma}t}dt+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Integration of squared integral using integrationtrick
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(\int F\left(t\right)e^{\frac{k}{\gamma}t}dt\right)^{2} & =\int_{0}^{t}\int_{0}^{t}F\left(t_{1}\right)F\left(t_{2}\right)e^{\frac{k}{\gamma}t_{1}}e^{\frac{k}{\gamma}t_{2}}dt_{1}dt_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Anwendung im Mittelwert
+\begin_inset Formula 
+\begin{align*}
+\left\langle \left(x\left(t\right)\right)^{2}\right\rangle  & =\left\langle e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\left(\int F\left(t\right)e^{\frac{k}{\gamma}t}dt\right)^{2}\right\rangle \\
+ & +\left\langle 2\left(\frac{x_{0}}{\gamma}-\frac{1}{\gamma^{2}}F\left(0\right)\right)e^{-2\frac{k}{\gamma}t}\int F\left(t\right)e^{\frac{k}{\gamma}t}dt\right\rangle \\
+ & +\left\langle \left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}\right\rangle \\
+ & =e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\left\langle \left(\int F\left(t\right)e^{\frac{k}{\gamma}t}dt\right)^{2}\right\rangle \\
+ & +2\left(\frac{x_{0}}{\gamma}-\frac{1}{\gamma^{2}}F\left(0\right)\right)e^{-2\frac{k}{\gamma}t}\left\langle \int F\left(t\right)e^{\frac{k}{\gamma}t}dt\right\rangle \\
+ & +\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}\left\langle 1\right\rangle \\
+ & =e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\left\langle \int_{0}^{t}\int_{0}^{t}F\left(t_{1}\right)F\left(t_{2}\right)e^{\frac{k}{\gamma}t_{1}}e^{\frac{k}{\gamma}t_{2}}dt_{1}dt_{2}\right\rangle \\
+ & +2\left(\frac{x_{0}}{\gamma}-\frac{1}{\gamma^{2}}F\left(0\right)\right)e^{-2\frac{k}{\gamma}t}\int\left\langle F\left(t\right)\right\rangle e^{\frac{k}{\gamma}t}dt\\
+ & +\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}\\
+ & =e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\int_{0}^{t}\int_{0}^{t}\left\langle F\left(t_{1}\right)F\left(t_{2}\right)\right\rangle e^{\frac{k}{\gamma}t_{1}}e^{\frac{k}{\gamma}t_{2}}dt_{1}dt_{2}+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here we use the delta function result from spectral density 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ & =e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\int_{0}^{t}\int_{0}^{t}2k_{B}T\gamma\delta\left(t\right)e^{\frac{k}{\gamma}t_{1}}e^{\frac{k}{\gamma}t_{2}}dt_{1}dt_{2}+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calculate sum
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle \left(x\left(t\right)\right)^{2}\right\rangle -\left\langle x\left(t\right)\right\rangle ^{2} & =e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\int_{0}^{t}\int_{0}^{t}2k_{B}T\gamma\delta\left(t\right)e^{\frac{k}{\gamma}t_{1}}e^{\frac{k}{\gamma}t_{2}}dt_{1}dt_{2}+\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}-\left(x_{0}-\frac{1}{\gamma}F\left(0\right)\right)^{2}e^{-2\frac{k}{\gamma}t}\\
+ & =e^{-2\frac{k}{\gamma}t}\frac{1}{\gamma^{2}}\int_{0}^{t}\int_{0}^{t}2k_{B}T\gamma\delta\left(t\right)e^{\frac{k}{\gamma}t_{1}}e^{\frac{k}{\gamma}t_{2}}dt_{1}dt_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
