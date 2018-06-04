@@ -1,0 +1,611 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Added by lyx2lyx
+\renewcommand{\textendash}{--}
+\renewcommand{\textemdash}{---}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 2cm
+\rightmargin 3cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Fluktuations-Dissipations-Theorem
+\end_layout
+
+\begin_layout Standard
+Langevin Gleichung
+\begin_inset Formula 
+\begin{align*}
+m\ddot{x}+\gamma\dot{x}+kx & =F\left(t\right)\\
+\ddot{x}+\frac{\gamma}{m}\dot{x}+\frac{k}{m}x & =\frac{F\left(t\right)}{m}\\
+\ddot{x}+a\dot{x}+\omega_{0}^{2}x & =\frac{F\left(t\right)}{m}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mit 
+\begin_inset Formula $a=\frac{\gamma}{m}$
+\end_inset
+
+, 
+\begin_inset Formula $\omega_{0}^{2}=\frac{k}{m}$
+\end_inset
+
+ .
+ Ansatz mit Fourier transfom:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+x\left(t\right) & =\int_{-\infty}^{\infty}x\left(\omega\right)e^{-i\omega t}dt=X_{\omega}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ableitungen:
+\begin_inset Formula 
+\begin{align*}
+\dot{x} & =-i\omega X_{\omega}\\
+\ddot{x} & =-\omega^{2}X_{\omega}
+\end{align*}
+
+\end_inset
+
+Einsetzen liefert
+\begin_inset Formula 
+\begin{align*}
+-\omega^{2}X_{\omega}-ai\omega X_{\omega}+\omega_{0}^{2}X_{\omega} & =\frac{F\left(t\right)}{m}\\
+X_{\omega}\left(-\omega^{2}-ai\omega+\omega_{0}^{2}\right) & =\frac{F\left(t\right)}{m}\\
+X_{\omega} & =\frac{F\left(t\right)}{m}\frac{1}{\left(\omega_{0}^{2}-\omega^{2}-ai\omega\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Response Funktion
+\begin_inset Formula 
+\begin{align*}
+\phi & =\frac{\left(\omega_{0}^{2}-\omega^{2}\right)}{m\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}}+i\frac{a\omega}{m\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Korrelationsfunktion
+\begin_inset Formula 
+\begin{align*}
+C_{xx}\left(\omega\right) & =\frac{2k_{B}T}{\omega}\frac{a\omega}{m\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}}=\frac{2k_{B}T\gamma}{m^{2}}\frac{1}{\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rücktransformation
+\begin_inset Formula 
+\begin{align*}
+C_{xx}\left(t\right) & =\frac{1}{2\pi}\int_{-\infty}^{\infty}\frac{2k_{B}T\gamma}{m^{2}}\frac{e^{i\omega t}}{\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}}d\omega\\
+ & =\frac{k_{B}T\gamma}{\pi m^{2}}\int_{-\infty}^{\infty}\frac{e^{i\omega t}}{\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}}d\omega
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lösung durch Residuensatz für Fouriertransformationen.
+ Komplexe Erweiterung der Frequenz 
+\begin_inset Formula $\omega\inℂ$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+\int_{-\infty}^{\infty}f\left(z\right)e^{i\alpha z}dz & =\begin{cases}
+2\pi i\sum_{Im\left(z_{j}\right)>0}Res\left(f,z_{j}\right) & ,\alpha>0\\
+2\pi i\sum_{Im\left(z_{j}\right)<0}Res\left(f,z_{j}\right) & ,\alpha<0
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Polstellen der Funktion finden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2} & =0\\
+\omega_{0}^{2}-\omega^{2} & =\pm ia\omega\\
+-\omega^{2}\mp ia\omega+\omega_{0}^{2} & =0\\
+\omega^{2}\pm ia\omega-\omega_{0}^{2} & =0\\
+\omega & =\mp\frac{ia}{2}\pm\sqrt{-\frac{a^{2}}{4}+\omega_{0}^{2}}\\
+\omega & =\mp\frac{ia}{2}\pm h
+\end{align*}
+
+\end_inset
+
+Schreibe die Funktion in Nullstellenform
+\begin_inset Formula 
+\begin{align*}
+\frac{e^{i\omega t}}{\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}} & =\frac{e^{i\omega t}}{\left(\omega-\frac{ia}{2}+h\right)\left(\omega-\frac{ia}{2}-h\right)\left(\omega+\frac{ia}{2}+h\right)\left(\omega+\frac{ia}{2}-h\right)}
+\end{align*}
+
+\end_inset
+
+Welche Polstellen benutzen?: Dazu 
+\begin_inset Formula $\alpha=-t<0$
+\end_inset
+
+ für 
+\begin_inset Formula $t>0$
+\end_inset
+
+, daher nur Polstellen auf der unteren Halbeben.
+ Alles Polstellen erster Ordnung daher Berechnung der Residuen durch:
+\begin_inset Formula 
+\begin{align*}
+Res\left(f,z_{j}\right) & =\lim_{z\to z_{j}}\left(z-z_{j}\right)f\left(z\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für Polstelle 
+\begin_inset Formula $\omega+\frac{ia}{2}+h=\omega-\left(-\frac{ia}{2}-h\right)=\omega-\omega_{1}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\lim_{\omega\to\omega_{1}}\left(\omega+\frac{ia}{2}+h\right)\frac{e^{i\omega t}}{\left(\omega-\frac{ia}{2}+h\right)\left(\omega-\frac{ia}{2}-h\right)\left(\omega+\frac{ia}{2}+h\right)\left(\omega+\frac{ia}{2}-h\right)} & =\\
+\frac{e^{i\left(-\frac{ia}{2}-h\right)t}}{\left(-\frac{ia}{2}-h-\frac{ia}{2}+h\right)\left(-\frac{ia}{2}-h-\frac{ia}{2}-h\right)\left(-\frac{ia}{2}-h+\frac{ia}{2}-h\right)} & =\\
+\frac{e^{-i\left(\frac{ia}{2}+h\right)t}}{\left(-ia\right)\left(-ia-2h\right)\left(-2h\right)} & =\\
+\frac{e^{-i\left(\frac{ia}{2}+h\right)t}}{\left(2ha^{2}-ia4h^{2}\right)} & =\\
+\frac{e^{\frac{a}{2}t}e^{-iht}}{\left(2ha^{2}-ia4h^{2}\right)} & =\\
+\frac{e^{\frac{a}{2}t}e^{-iht}\left(2ha^{2}+ia4h^{2}\right)}{\left(2ha^{2}\right)^{2}-\left(a4h^{2}\right)^{2}}
+\end{align*}
+
+\end_inset
+
+Für Polstelle 
+\begin_inset Formula $\omega+\frac{ia}{2}-h=\omega-\left(-\frac{ia}{2}+h\right)=\omega-\omega_{2}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\lim_{\omega\to\omega_{2}}\left(\omega+\frac{ia}{2}-h\right)\frac{e^{i\omega t}}{\left(\omega-\frac{ia}{2}+h\right)\left(\omega-\frac{ia}{2}-h\right)\left(\omega+\frac{ia}{2}+h\right)\left(\omega+\frac{ia}{2}-h\right)} & =\\
+\frac{e^{i\left(-\frac{ia}{2}+h\right)t}}{\left(-\frac{ia}{2}+h-\frac{ia}{2}+h\right)\left(-\frac{ia}{2}+h-\frac{ia}{2}-h\right)\left(-\frac{ia}{2}+h+\frac{ia}{2}+h\right)} & =\\
+\frac{e^{i\left(-\frac{ia}{2}+h\right)t}}{\left(-ia+2h\right)\left(-ia\right)\left(2h\right)} & =\\
+\frac{e^{i\left(-\frac{ia}{2}+h\right)t}}{\left(-a^{2}2h-ia4h^{2}\right)} & =\\
+\frac{e^{\frac{a}{2}t}e^{iht}}{\left(-a^{2}2h-ia4h^{2}\right)} & =\\
+\frac{e^{\frac{a}{2}t}e^{iht}\left(-a^{2}2h+ia4h^{2}\right)}{\left(a^{2}2h\right)^{2}-\left(a4h^{2}\right)^{2}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Summe der Residuen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+2\pi i\left[\frac{e^{\frac{a}{2}t}e^{-iht}\left(2ha^{2}+ia4h^{2}\right)}{\left(2a^{2}h\right)^{2}-\left(4ah^{2}\right)^{2}}+\frac{e^{\frac{a}{2}t}e^{iht}\left(-a^{2}2h+ia4h^{2}\right)}{\left(2a^{2}h\right)^{2}-\left(4ah^{2}\right)^{2}}\right] & =\\
+2\pi i\frac{e^{\frac{a}{2}t}}{\left(2a^{2}h\right)^{2}-\left(4ah^{2}\right)^{2}}\left[e^{-iht}\left(2ha^{2}+ia4h^{2}\right)+e^{iht}\left(-a^{2}2h+ia4h^{2}\right)\right] & =\\
+2\pi i\frac{e^{\frac{a}{2}t}}{\left(2a^{2}h\right)^{2}-\left(4ah^{2}\right)^{2}}\left[\left(\cos\left(ht\right)-i\sin\left(ht\right)\right)\left(2a^{2}h+i4ah^{2}\right)+\left(\cos\left(ht\right)+i\sin\left(ht\right)\right)\left(-2a^{2}h+i4ah^{2}\right)\right] & =\\
+4\pi i\frac{e^{\frac{a}{2}t}}{\left(2a^{2}h\right)^{2}-\left(4ah^{2}\right)^{2}}\left[\cos\left(ht\right)\left(i4ah^{2}\right)-i\sin\left(ht\right)\left(2a^{2}h\right)\right] & =\\
+4\pi\frac{4ah^{2}}{4^{2}a^{2}h^{4}}\frac{e^{\frac{a}{2}t}}{\frac{2^{2}a^{4}h^{2}}{4^{2}a^{2}h^{4}}-1}\left[-\cos\left(ht\right)+\sin\left(ht\right)\frac{2a^{2}h}{4ah^{2}}\right] & =\\
+\pi\frac{4m}{\gamma}\frac{e^{\frac{\gamma}{2m}t}}{a^{2}-4h^{2}}\left[-\cos\left(ht\right)+\sin\left(ht\right)\frac{\gamma}{2mh}\right]
+\end{align*}
+
+\end_inset
+
+Kurze Nebenrechnung
+\begin_inset Formula 
+\begin{align*}
+a^{2}-4h^{2} & =\frac{\gamma^{2}}{m^{2}}-4\left(-\frac{a^{2}}{4}+\omega_{0}^{2}\right)\\
+ & =\frac{\gamma^{2}}{m^{2}}+\frac{\gamma^{2}}{m^{2}}-4\omega_{0}^{2}\\
+ & =\frac{2\gamma^{2}}{m^{2}}-4\omega_{0}^{2}
+\end{align*}
+
+\end_inset
+
+Damit Korrelationsfunktion:
+\begin_inset Formula 
+\begin{align*}
+C_{xx}\left(t\right) & =\frac{k_{B}T\gamma}{\pi m^{2}}\int_{-\infty}^{\infty}\frac{e^{i\omega t}}{\left(\omega_{0}^{2}-\omega^{2}\right)^{2}+a^{2}\omega^{2}}d\omega\\
+ & =\frac{4k_{B}T}{m}\frac{e^{\frac{\gamma}{2m}t}}{\frac{2\gamma^{2}}{m^{2}}-4\omega_{0}^{2}}\left[\sin\left(ht\right)\frac{\gamma}{2mh}-\cos\left(ht\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Spezialfälle: unterdämpft, überdämpft, kritische Dämpfung
+\end_layout
+
+\begin_layout Section
+Ornstein-Uhlenbeck-Prozess II
+\end_layout
+
+\begin_layout Standard
+Fokker Planck Gleichung des Prozess
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}p\left(x,t\right) & =\frac{k}{\gamma}\partial_{x}\left(xp\left(x,t\right)\right)+2k_{B}T\gamma\partial_{x}^{2}p\left(x,t\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lösung der Gleichung Normalverteilung
+\begin_inset Formula 
+\begin{align*}
+\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g\left(t-t_{0}\right)^{2}\right)}}\exp\left(-\frac{\left(x-g\left(t-t_{0}\right)x_{0}\right)^{2}}{2\sigma^{2}\left(1-g\left(t-t_{0}\right)^{2}\right)}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Schreibe zur Vereinfachung:
+\begin_inset Formula 
+\begin{align*}
+g\left(t-t_{0}\right) & =g\\
+\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Berechne Ortsableitung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\partial_{x}\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\partial_{x}\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\\
+\partial_{x}\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right) & =\partial_{x}\left[-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right]\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\\
+ & =\left[-\frac{\partial_{x}\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right]\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\\
+ & =\left[-\frac{2\left(x-gx_{0}\right)}{2\sigma^{2}\left(1-g^{2}\right)}\right]\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\\
+ & =-\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\\
+\partial_{x}\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =-\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\mathcal{N}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zweite Ableitung nach der Ortskoordinate
+\begin_inset Formula 
+\begin{align*}
+\partial_{x}^{2}\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =\partial_{x}\left[-\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\mathcal{N}\right]\\
+ & =\partial_{x}\left[-\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\right]\mathcal{N}-\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\partial_{x}\mathcal{N}\\
+ & =-\left[\frac{\partial_{x}\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\right]\mathcal{N}+\left(\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\right)^{2}\mathcal{N}\\
+ & =-\frac{1}{\sigma^{2}\left(1-g^{2}\right)}\mathcal{N}+\left(\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\right)^{2}\mathcal{N}\\
+ & =\mathcal{N}\left[\left(\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\right)^{2}-\frac{1}{\sigma^{2}\left(1-g^{2}\right)}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zeitableitung.
+ Zunächst die Funktion 
+\begin_inset Formula $\partial_{t}g^{2}=2g\dot{g}$
+\end_inset
+
+ und 
+\begin_inset Formula $\partial_{t}g=\dot{g}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right)= & \frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\\
+ & =\partial_{t}\left[\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\right]\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\\
+ & +\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\partial_{t}\left[\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Einzeln:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}\left[\frac{1}{\sqrt{2\pi\sigma^{2}}}\frac{1}{\sqrt{\left(1-g^{2}\right)}}\right] & =\frac{1}{\sqrt{2\pi\sigma^{2}}}\partial_{t}\left(1-g^{2}\right)^{-\frac{1}{2}}\\
+ & =-\frac{1}{2\sqrt{2\pi\sigma^{2}}}\left(1-g^{2}\right)^{-\frac{3}{2}}\partial_{t}\left(1-g^{2}\right)\\
+ & =\frac{2g\dot{g}}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)^{1}\left(1-g^{2}\right)^{2}}}\\
+ & =\frac{2g\dot{g}}{\left(1-g^{2}\right)\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)^{1}}}\\
+\partial_{t}\left[\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\right]\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right) & =\frac{2g\dot{g}}{\left(1-g^{2}\right)}\mathcal{N}
+\end{align*}
+
+\end_inset
+
+Exponential term:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}\left[\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\right] & =\partial_{t}\left[-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right]\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Erster term einzeln:
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}\left[-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right] & =-\frac{\partial_{t}\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}-\left(x-gx_{0}\right)^{2}\partial_{t}\left(2\sigma^{2}\left(1-g^{2}\right)\right)^{-1}\\
+ & =-\frac{2\left(x-gx_{0}\right)x_{0}\dot{g}}{2\sigma^{2}\left(1-g^{2}\right)}-\frac{\left(x-gx_{0}\right)^{2}2\sigma^{2}2g\dot{g}}{\left(2\sigma^{2}\left(1-g^{2}\right)\right)^{2}}\\
+ & =-\frac{\dot{g}\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\left[x_{0}+\frac{\left(x-gx_{0}\right)g}{\left(1-g^{2}\right)}\right]\\
+\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\partial_{t}\left[\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\right] & =\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g^{2}\right)}}\exp\left(-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right)\partial_{t}\left[-\frac{\left(x-gx_{0}\right)^{2}}{2\sigma^{2}\left(1-g^{2}\right)}\right]\\
+ & =-\frac{\dot{g}\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\left[x_{0}+\frac{\left(x-gx_{0}\right)g}{\left(1-g^{2}\right)}\right]\mathcal{N}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Damit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =\frac{2g\dot{g}}{\left(1-g^{2}\right)}\mathcal{N}-\frac{\dot{g}\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\left[x_{0}+\frac{\left(x-gx_{0}\right)g}{\left(1-g^{2}\right)}\right]\mathcal{N}\\
+ & =\mathcal{N}\frac{\dot{g}}{\left(1-g^{2}\right)}\left[2g-\frac{\left(x-gx_{0}\right)}{\sigma^{2}}\left(x_{0}+\frac{\left(x-gx_{0}\right)g}{\left(1-g^{2}\right)}\right)\right]
+\end{align*}
+
+\end_inset
+
+Einsetzen in die DGL liefert:
+\begin_inset Formula 
+\begin{align*}
+\partial_{t}\mathcal{N} & =\frac{k}{\gamma}\partial_{x}\left(x\mathcal{N}\right)+2k_{B}T\gamma\partial_{x}^{2}\mathcal{N}\\
+\partial_{t}\mathcal{N} & =\frac{k}{\gamma}\mathcal{N}+\frac{k}{\gamma}x\partial_{x}\mathcal{N}+2k_{B}T\gamma\partial_{x}^{2}\mathcal{N}\\
+\mathcal{N}\frac{\dot{g}}{\left(1-g^{2}\right)}\left[2g-\frac{\left(x-gx_{0}\right)}{\sigma^{2}}\left(x_{0}+\frac{\left(x-gx_{0}\right)g}{\left(1-g^{2}\right)}\right)\right] & =\frac{k}{\gamma}\mathcal{N}-\frac{kx\left(x-gx_{0}\right)}{\gamma\sigma^{2}\left(1-g^{2}\right)}\mathcal{N}\\
+ & +2k_{B}T\gamma\mathcal{N}\left[\left(\frac{\left(x-gx_{0}\right)}{\sigma^{2}\left(1-g^{2}\right)}\right)^{2}-\frac{1}{\sigma^{2}\left(1-g^{2}\right)}\right]\\
+\dot{g}\left[2g\sigma^{2}-\left(x-gx_{0}\right)\left(x_{0}+\frac{\left(x-gx_{0}\right)g}{\left(1-g^{2}\right)}\right)\right] & =\frac{k}{\gamma}\left(\sigma^{2}\left(1-g^{2}\right)-\frac{x\left(x-gx_{0}\right)}{}\right)\\
+ & +2k_{B}T\gamma\left[\frac{\left(x-gx_{0}\right)^{2}}{\sigma^{2}\left(1-g^{2}\right)}-1\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ornstein-Uhlenbeck-Prozess III
+\end_layout
+
+\begin_layout Standard
+Chapman-Kolmogorov-Gleichung
+\begin_inset Formula 
+\begin{align*}
+p\left(x,t|x_{0,}t_{0}\right) & =\int_{-\infty}^{\infty}p\left(x,t|x_{,}^{\prime}t^{\prime}\right)p\left(x_{,}^{\prime}t^{\prime}|x_{0,}t_{0}\right)dx^{\prime}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gauss Prozess:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g\left(t-t_{0}\right)^{2}\right)}}\exp\left(-\frac{\left(x-g\left(t-t_{0}\right)x_{0}\right)^{2}}{2\sigma^{2}\left(1-g\left(t-t_{0}\right)^{2}\right)}\right)
+\end{align*}
+
+\end_inset
+
+Eingesetzt in CK Gleichung.
+ Vorfaktoren nur von der Zeit Abhängig, daher kein Integral darüber.
+\begin_inset Formula 
+\begin{align*}
+\mathcal{N}\left(x,t\text{|}x_{0},t_{0}\right) & =\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g\left(t-t^{\prime}\right)^{2}\right)}}\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)}}\int_{-\infty}^{\infty}\exp\left(x,t|x_{,}^{\prime}t^{\prime}\right)\exp\left(x_{,}^{\prime}t^{\prime}|x_{0,}t_{0}\right)dx^{\prime}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Behandle Vorfaktoren getrennt:
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g\left(t-t^{\prime}\right)^{2}\right)}}\frac{1}{\sqrt{2\pi\sigma^{2}\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)}} & =A\left(t,t^{\prime},t_{0}\right)
+\end{align*}
+
+\end_inset
+
+Integral:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\int_{-\infty}^{\infty}\exp\left(x,t|x_{,}^{\prime}t^{\prime}\right)\exp\left(x_{,}^{\prime}t^{\prime}|x_{0,}t_{0}\right)dx^{\prime} & =\\
+\int_{-\infty}^{\infty}\exp\left(-\frac{\left(x-g\left(t-t^{\prime}\right)x^{\prime}\right)^{2}}{2\sigma^{2}\left(1-g\left(t-t^{\prime}\right)^{2}\right)}\right)\exp\left(-\frac{\left(x^{\prime}-g\left(t^{\prime}-t_{0}\right)x_{0}\right)^{2}}{2\sigma^{2}\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)}\right)dx^{\prime} & =\\
+\int_{-\infty}^{\infty}\exp\left(-\frac{\left(x-g\left(t-t^{\prime}\right)x^{\prime}\right)^{2}}{2\sigma^{2}\left(1-g\left(t-t^{\prime}\right)^{2}\right)}-\frac{\left(x^{\prime}-g\left(t^{\prime}-t_{0}\right)x_{0}\right)^{2}}{2\sigma^{2}\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)}\right)dx^{\prime}
+\end{align*}
+
+\end_inset
+
+Betrachte Argument der exp funktion:
+\begin_inset Formula 
+\begin{align*}
+-\frac{\left(x-g\left(t-t^{\prime}\right)x^{\prime}\right)^{2}}{2\sigma^{2}\left(1-g\left(t-t^{\prime}\right)^{2}\right)}-\frac{\left(x^{\prime}-g\left(t^{\prime}-t_{0}\right)x_{0}\right)^{2}}{2\sigma^{2}\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)} & =\\
+-\frac{\left(x-g\left(t-t^{\prime}\right)x^{\prime}\right)^{2}\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)+\left(x^{\prime}-g\left(t^{\prime}-t_{0}\right)x_{0}\right)^{2}\left(1-g\left(t-t^{\prime}\right)^{2}\right)}{2\sigma^{2}\left(1-g\left(t-t^{\prime}\right)^{2}\right)\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)}
+\end{align*}
+
+\end_inset
+
+Betrachte nur Zähler und multipliziere aus:
+\begin_inset Formula 
+\begin{align*}
+\left(x-g\left(t-t^{\prime}\right)x^{\prime}\right)^{2} & =\\
+x^{2}-2g\left(t-t^{\prime}\right)x^{\prime}+\left(g\left(t-t^{\prime}\right)x^{\prime}\right)^{2}\\
+\left(x^{\prime}-g\left(t^{\prime}-t_{0}\right)x_{0}\right)^{2} & =\\
+x^{\prime2}-2x^{\prime}g\left(t^{\prime}-t_{0}\right)x_{0}+\left(g\left(t^{\prime}-t_{0}\right)x_{0}\right)^{2}
+\end{align*}
+
+\end_inset
+
+Damit
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(x^{2}-2g\left(t-t^{\prime}\right)x^{\prime}+\left(g\left(t-t^{\prime}\right)x^{\prime}\right)^{2}\right)\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)+\left(x^{\prime2}-2x^{\prime}g\left(t^{\prime}-t_{0}\right)x_{0}+\left(g\left(t^{\prime}-t_{0}\right)x_{0}\right)^{2}\right)\left(1-g\left(t-t^{\prime}\right)^{2}\right) & =\\
+x^{2}\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)+\left(g\left(t^{\prime}-t_{0}\right)x_{0}\right)\left(1-g\left(t-t^{\prime}\right)^{2}\right) & +\\
+\left(-2g\left(t-t^{\prime}\right)x^{\prime}+\left(g\left(t-t^{\prime}\right)x^{\prime}\right)^{2}\right)\left(1-g\left(t^{\prime}-t_{0}\right)^{2}\right)+\left(x^{\prime2}-2x^{\prime}g\left(t^{\prime}-t_{0}\right)x_{0}\right)\left(1-g\left(t-t^{\prime}\right)^{2}\right) & =
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
