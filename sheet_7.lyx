@@ -1,0 +1,357 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Extremwertstatistik
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+R & =\max\left\{ x_{i}\right\} 
+\end{align*}
+
+\end_inset
+
+Unabhängige, identisch verteilte Zufallsvariablen mit Verbunddichte 
+\begin_inset Formula $p_{x}\left(x\right)$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+Prob\left(R\leq X\right) & =Prob\left(x_{1}\leq X,x_{2}\leq X,...,x_{N}\leq X\right)\\
+ & =Prob\left(x_{1}\leq X\right)\cdot Prob\left(x_{2}\leq X\right)\cdot...\\
+ & =\left(\int_{-\infty}^{X}p_{x}\left(x\right)dx\right)^{N}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Rice Formula
+\end_layout
+
+\begin_layout Standard
+stationärer, differenzierbarer Zufallsprozess 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+ mit gegebener Verbunddichte der Koordinate und Geschwindigkeit zu einem
+ Zeitpunkt 
+\begin_inset Formula $p\left(x,v\right)$
+\end_inset
+
+.
+ Betrachte sehr kleines Zeitintervall 
+\begin_inset Formula $t,t+dt$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Frage: Welche Prozesse können 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ in diesem Zeitintervall überhaupt erreichen, gesucht ist also die Anzahl
+ der Prozessen 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Diejenigen, welche die die folgende Ungleichung erfüllen
+\begin_inset Formula 
+\begin{align*}
+x_{0}\geq x\left(t\right)+vdt & \geq x_{0}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das gibt Integralgrenzen.
+\begin_inset Formula 
+\begin{align*}
+\int_{x_{0}-vdt}^{x_{0}}p\left(x,v\right)dx
+\end{align*}
+
+\end_inset
+
+Wir suchen alle positiven Geschwindigkeiten.
+\begin_inset Formula 
+\begin{align*}
+X=\int_{0}^{\infty}\int_{x_{0}-vdt}^{x_{0}}p\left(x,v\right)dxdv
+\end{align*}
+
+\end_inset
+
+Ansatz ist, dass das Zeitintervall so klein ist 
+\begin_inset Formula $dt<<1$
+\end_inset
+
+, daher muss 
+\begin_inset Formula $x\left(t\right)\approx x_{0}$
+\end_inset
+
+ sein, daher 
+\begin_inset Formula $p\left(x,v\right)\approx p\left(x_{0},v\right)$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\int_{0}^{\infty}\int_{x_{0}-vdt}^{x_{0}}p\left(x,v\right)dxdv & \approx\int_{0}^{\infty}p\left(x_{0},v\right)\int_{x_{0}-vdt}^{x_{0}}dxdv\\
+ & =\int_{0}^{\infty}p\left(x_{0},v\right)\left[x_{0}-x_{0}+vdt\right]dv\\
+X_{+} & =dt\int_{0}^{\infty}p\left(x_{0},v\right)vdv
+\end{align*}
+
+\end_inset
+
+Betrachtet man die symmetrische Forderung von oben nach unten, kann man
+ schreiben:
+\begin_inset Formula 
+\begin{align*}
+X_{+}+X_{-} & =dt\left(\int_{0}^{\infty}p\left(x_{0},v\right)vdv+\int_{-\infty}^{0}\left|v\right|p\left(x_{0},v\right)dv\right)\\
+n\left(x_{0}\right)=\frac{X}{dt} & =\int_{-\infty}^{\infty}p\left(x_{0},v\right)\left|v\right|dv
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pope Ching Gleichung
+\end_layout
+
+\begin_layout Standard
+Zeige, dass gilt:
+\begin_inset Formula 
+\begin{align*}
+\dot{x}\left(t\right)\frac{\partial}{\partial t}P\left(x|t\right) & =-\frac{\partial}{\partial x}\left[\dot{x}^{2}\left(t\right)P\left(x|t\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Gleichverteilung
+\end_layout
+
+\begin_layout Standard
+Es gilt Gleichverteilungssatz
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+mv^{2} & =k_{B}T\\
+v^{2} & =\frac{k_{B}T}{m}
+\end{align*}
+
+\end_inset
+
+Einsetzen in Pope Ching Gleichung
+\begin_inset Formula 
+\begin{align*}
+p\left(x\right) & =\frac{C}{v^{2}\left(x\right)}\exp\left(\int_{0}^{x}\frac{a\left(x^{'}\right)}{v^{2}\left(x^{'}\right)}dx'\right)\\
+ & =\frac{Cm}{k_{B}T}\exp\left(\int_{0}^{x}\frac{ma\left(x^{'}\right)}{k_{B}T}dx'\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Betrachte 
+\begin_inset Formula $P\left(x|t\right)=\delta\left(x-x\left(t\right)\right)$
+\end_inset
+
+.
+ Zeitableitung, dazu benutze Fourierdarstellung der Delta Funktion.
+\begin_inset Formula 
+\begin{align*}
+\frac{\partial}{\partial t}P\left(x|t\right) & =\frac{\partial}{\partial t}\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{ip\left(x-x\left(t\right)\right)}dp\\
+ & =\frac{1}{2\pi}\int_{-\infty}^{\infty}\frac{\partial}{\partial t}\left[ip\left(x-x\left(t\right)\right)\right]e^{ip\left(x-x\left(t\right)\right)}dp\\
+ & =\frac{1}{2\pi}\int_{-\infty}^{\infty}ip\left(-\frac{\partial}{\partial t}x\left(t\right)\right)e^{ip\left(x-x\left(t\right)\right)}dp\\
+ & =\left(-\frac{\partial}{\partial t}x\left(t\right)\right)\frac{1}{2\pi}\int_{-\infty}^{\infty}ipe^{ip\left(x-x\left(t\right)\right)}dp\\
+ & =\left(-\frac{\partial}{\partial t}x\left(t\right)\right)\frac{\partial}{\partial x}\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{ip\left(x-x\left(t\right)\right)}dp\\
+\frac{\partial}{\partial t}P\left(x|t\right) & =-\dot{x}\left(t\right)\frac{\partial P\left(x|t\right)}{\partial x}
+\end{align*}
+
+\end_inset
+
+Multipliziere mit 
+\begin_inset Formula $\dot{x}\left(t\right)$
+\end_inset
+
+ und ziehe Ableitung raus, die nicht von 
+\begin_inset Formula $x$
+\end_inset
+
+ abhängig ist
+\begin_inset Formula 
+\begin{align*}
+\dot{x}\left(t\right)\frac{\partial}{\partial t}P\left(x|t\right) & =-\frac{\partial}{\partial x}\left[\dot{x}^{2}\left(t\right)P\left(x|t\right)\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jetzt integriere die Gleichung
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{T}\int_{0}^{T}\dot{x}\left(t\right)\frac{\partial P\left(x|t\right)}{\partial t}dt & =-\frac{1}{T}\int_{0}^{T}\frac{\partial}{\partial x}\left[\dot{x}^{2}\left(t\right)P\left(x|t\right)\right]dt
+\end{align*}
+
+\end_inset
+
+Betrachte linke Seite
+\begin_inset Formula 
+\begin{align*}
+\lim_{T\to\infty}\frac{1}{T}\int_{0}^{T}\dot{x}\left(t\right)\frac{\partial P\left(x|t\right)}{\partial t}dt & =\lim_{T\to\infty}\frac{1}{T}\left[\dot{x}\left(t\right)P\left(x|t\right)\right]_{0}^{T}-\lim_{T\to\infty}\frac{1}{T}\int_{0}^{T}\ddot{x}\left(t\right)P\left(x|t\right)dt\\
+\lim_{T\to\infty}\frac{1}{T}\left[\dot{x}\left(t\right)P\left(x|t\right)\right]_{0}^{T} & =\lim_{T\to\infty}\frac{\left[\dot{x}\left(T\right)P\left(x|T\right)-\dot{x}\left(0\right)P\left(x|0\right)\right]}{T}
+\end{align*}
+
+\end_inset
+
+Jetzt benutze Formel 
+\begin_inset Formula 
+\begin{align*}
+P\left(x|t\right)p\left(t\right) & =P\left(t|x\right)p\left(x\right)=P\left(x|t\right)\frac{1}{T}
+\end{align*}
+
+\end_inset
+
+und 
+\begin_inset Formula $p\left(t\right)=\frac{1}{T}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{T}\int_{0}^{T}\ddot{x}\left(t\right)\frac{\partial P\left(x|t\right)}{\partial t}dt & =-\frac{1}{T}\int_{0}^{T}\frac{\partial}{\partial x}\left[\dot{x}^{2}\left(t\right)P\left(x|t\right)\right]dt\\
+\int_{0}^{T}\ddot{x}\left(t\right)\frac{1}{T}P\left(x|t\right)dt & =-\int_{0}^{T}\frac{\partial}{\partial x}\left[\dot{x}^{2}\left(t\right)\frac{1}{T}P\left(x|t\right)\right]dt\\
+\int_{0}^{T}\ddot{x}\left(t\right)P\left(t|x\right)p\left(x\right)dt & =-\int_{0}^{T}\frac{\partial}{\partial x}\left[\dot{x}^{2}\left(t\right)P\left(t|x\right)p\left(x\right)\right]dt\\
+p\left(x\right)\int_{0}^{T}\ddot{x}\left(t\right)P\left(t|x\right)dt & =-\frac{\partial}{\partial x}\left[p\left(x\right)\int_{0}^{T}\dot{x}^{2}\left(t\right)P\left(t|x\right)dt\right]
+\end{align*}
+
+\end_inset
+
+Vergleich mit pope Ching Gleichung
+\begin_inset Formula 
+\begin{align*}
+p\left(x\right) & =\frac{C}{v^{2}\left(x\right)}\exp\left(\int_{0}^{x}\frac{a\left(x^{'}\right)}{v^{2}\left(x^{'}\right)}dx'\right)\\
+p\left(x\right) & =-\frac{1}{\int_{0}^{T}\ddot{x}\left(t\right)P\left(t|x\right)dt}\frac{\partial}{\partial x}\left[p\left(x\right)\int_{0}^{T}\dot{x}^{2}\left(t\right)P\left(t|x\right)dt\right]
+\end{align*}
+
+\end_inset
+
+Bedingte Mittelwerte
+\begin_inset Formula 
+\begin{align*}
+v^{2} & =\left\langle \dot{x}^{2}|x\right\rangle \\
+a & =\left\langle \ddot{x}|x\right\rangle 
+\end{align*}
+
+\end_inset
+
+Einsetzen
+\begin_inset Formula 
+\begin{align*}
+p\left(x\right) & =-\frac{1}{\int_{0}^{T}\ddot{x}\left(t\right)P\left(t|x\right)dt}\frac{\partial}{\partial x}\left[p\left(x\right)\int_{0}^{T}\dot{x}^{2}\left(t\right)P\left(t|x\right)dt\right]\\
+p\left(x\right) & =-\frac{1}{a}\frac{\partial}{\partial x}\left[p\left(x\right)v^{2}\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
